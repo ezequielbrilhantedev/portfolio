@@ -1,16 +1,16 @@
-import { Home } from "./pages/Home/Home"
-import styles from './App.module.css'
+import { ThemeProvider } from "styled-components"
+import { defaultTheme } from "./styles/theme/default"
+import { GlobalStyle } from "./styles/global"
+import { Home } from "./pages/Home"
 
-import './global.css'
 
-
-function App() {
+export function App() {
 
   return (
-    <main className={styles.container}>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
       <Home />
-    </main>
+    </ThemeProvider>
   )
 }
 
-export default App
